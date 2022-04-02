@@ -1,0 +1,119 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.color-toggle {
+  float: right;
+  top: -83px;
+  position: relative;
+  width: 180px;
+  display: flex;
+}
+.header-wrapper {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+.toggle {
+  color: hsl(228, 12%, 44%);
+  font-weight: bold;
+  font-size: 19px;
+  flex: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 32px;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: rotate(180deg);
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(228, 12%, 44%);
+  background-image: none;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 6px;
+  bottom: 3px;
+  background-color: #20222f;
+  -webkit-transition: .4s;
+
+  transition: .4s;
+}
+
+input:checked + .slider {
+
+  background-color: #3f95cd; 
+  background-image: linear-gradient(to right, #3f95cd , #3ecc8e);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(228, 12%, 44%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+  background-color: white;
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+[data-theme = 'dark'] {
+  background-color:#000000;
+  --bg:white;
+  --border:rgb(210, 205, 205);
+}
+@media (max-width: 1355px) {
+  .color-toggle {
+      margin-right: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .color-toggle {
+      top: 30px;
+      float: left;
+      width: 90%;
+      margin-left: 20px;
+  }
+}
+  
